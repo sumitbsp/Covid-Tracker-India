@@ -1,0 +1,208 @@
+:root {
+    --main-bg-color: #161625;
+    --secondary-bg-color: #1B1B29;
+    --font-color: rgb(204, 204, 204);
+    --shadow-color:#574F62;
+}
+
+#state-data:empty {
+    display: none;
+}
+
+body {
+    background-color:var(--main-bg-color);
+    /* background-image: linear-gradient(to right bottom, #06060b, #0a0a11, #0e0d16, #11101b, #13131f, #13131f, #13131f, #13131f, #11101b, #0e0d16, #0a0a11, #06060b); */
+    color: var(--font-color);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.8rem;
+}
+
+select{
+    background-color: var(--secondary-bg-color);
+    color: var(--font-color);
+    overflow-y: auto;
+}
+
+select::-webkit-scrollbar {
+    display: none;
+  }
+
+/* h1 {
+    background-color: #6F64E8;
+    width: 100%;
+    margin-top: 0;
+    padding: 20px 0;
+    font-weight: bold;
+    color: white;
+} */
+h1{
+    padding: 10px 0 ;
+}
+@media screen and (max-width: 600px){
+    h1{
+        font-size: 30px;
+    }
+}
+
+h1 span {
+    color: #ff073a;
+}
+
+h3{
+    font-size: 2.5rem;
+}
+
+.overall-numbers {
+    display: flex;
+    justify-content: center;
+    padding: 20px 70px;
+    margin: auto;
+    border-radius: 10px;
+    width: auto;
+}
+
+.overall-numbers div{
+    /* margin: auto; */
+    /* background-color: var(--secondary-bg-color); */
+    padding: 12px 0;
+    margin: 0 20px;
+    width: 23%;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 5px;
+    /* border: 1px solid var(--font-color); */
+    box-shadow: 0px 0px 10px -9px var(--font-color);
+}
+
+@media screen and (max-width: 600px) {
+    .overall-numbers{
+        padding: 20px 0px;
+    }
+    .overall-numbers div{
+        padding: 5px 5px;
+        margin: 1%;
+        width: 30%;
+    }
+}
+
+ /*individual colors for divs*/
+.total-cases{
+    color:#ff073a;
+    background-color: rgba(255,7,58,.12549);
+}
+.total-recovered{
+    color:#28a745;
+    background-color: #182829;
+}
+.total-deceased{
+    color:#6c757d;
+    background-color: #1C1C2B;
+}
+
+#state-info{
+    background-color: var(--secondary-bg-color);
+    padding: 10px 20px;
+    /* box-shadow: 0px 5px 10px var(--shadow-color); */
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+    border: 1px solid var(--font-color);
+}
+
+#state-data{
+    background-color: var(--main-bg-color);
+    /* padding: 10px 0px; */
+    border: 1px solid var(--font-color);
+    /* box-shadow: 2px 2px 10px var(--shadow-color); */
+}
+.state-data-labels {
+    display: flex;
+    justify-content: space-around;
+}
+.state-data-labels div{
+    padding: 5px 30px;
+    width: 25%;
+    text-align: center;
+    background-color: inherit;
+}
+
+#state-data >div:nth-child(even){
+    background-color: var(--secondary-bg-color);
+}
+
+#state-data .district{
+    text-align: left;
+    padding-left: 80px;
+}
+
+@media screen and (max-width: 600px){
+    #state-data {
+        text-align: unset;
+    }
+    .state-data-labels div{
+        padding: 5px 5px;
+        /* max-width: 25%; */
+        /* word-break: break-all; */
+    }
+    #state-data .district{
+        width: 40%!important;
+        padding-left: 10px;
+    }
+    #state-info, #state-data{
+        font-size: 1.5rem;
+    }
+    .state-data-labels{
+        word-break: keep-all!important;
+    }
+}
+
+
+/* chart toogle button */
+.chart{
+    margin-top: 20px;
+    position: relative;
+}
+
+#chart-toggle{
+    position: absolute;
+    top: 0;
+    right: 5%;
+    background-color: #182829;
+    color: #28a745;
+    border: 1px solid #28a745;
+    padding: 0 5px;
+    height: 30px;
+    width: 80px;
+}
+@media screen and (max-width: 550px){
+    #chart-toggle{
+    top: -25px;
+    right: 5%;
+    padding: 0 2px;
+    height: 30px;
+    width: 69px;
+    font-size: 12px;
+    font-weight: bold;
+    }
+
+    #state-wise-chart {
+        height: 100vh!important;
+    }
+}
+
+footer{
+    margin-top: 50px;
+    border-top: 1px solid var(--font-color);
+}
+.footer{
+    font-size: 1.8rem;
+    padding-top: 15px;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+@media screen and (max-width:600px){
+    .footer {
+        font-size: 1.3rem;
+    }
+}
