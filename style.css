@@ -57,6 +57,7 @@ h3{
     justify-content: center;
     padding: 20px 70px;
     margin: auto;
+    margin-bottom: 40px;
     border-radius: 10px;
     width: auto;
 }
@@ -159,7 +160,7 @@ h3{
 
 /* chart toogle button */
 .chart{
-    margin-top: 20px;
+    margin: 20px 0;
     position: relative;
 }
 
