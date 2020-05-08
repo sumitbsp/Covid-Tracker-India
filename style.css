@@ -57,9 +57,11 @@ h3{
     justify-content: center;
     padding: 20px 70px;
     margin: auto;
-    margin-bottom: 40px;
     border-radius: 10px;
     width: auto;
+}
+.previous-day-numbers{
+    margin-bottom: 40px;
 }
 
 .overall-numbers div{
