@@ -34,8 +34,11 @@
             <div class="total-deceased" id="new-deceased"></div>
         </div>
 
-        <div class="chart" style="width:100%; height:80vh">
-            <button class="btn" id="chart-toggle">Line Chart</button>
+        <div id="overall-chart" class="chart" style="width:100%; height:80vh">
+            <div id="chart-type-btn">
+                <button class=" chart-btn" id="line-chart">Line Chart</button>
+                <button class=" chart-btn" id="bar-chart">Bar Chart</button>
+            </div>
             <canvas id="data-chart"></canvas>
         </div>
         <div id="state-wise-chart" class="chart" style="width:100%; height:80vh">
@@ -46,7 +49,7 @@
         <div class="state-wise-data">
             <h3>State Wise Data</h3>
             <select name="state" id="state-drpdown">
-                <option value="" selected disabled>Select</option>
+                <option value="" selected disabled>Select State</option>
                 <option value="Andhra Pradesh">Andhra Pradesh</option>
                 <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>;
                 <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -93,8 +96,13 @@
     </div>
     <footer>
         <div class="footer">
-            <p>Stay Home | Stay Safe | Help the Animals | Help the Poor</p>
-            <p>&copy; Sumit Banerjee</p>
+            <div>
+                <p>Stay Home | Stay Safe</p>
+                <p>Help the Animals | Help the Poor</p>
+            </div>
+            <div>
+                <p>&copy; Sumit Banerjee</p>
+            </div>
         </div>
     </footer>
 

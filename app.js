@@ -140,15 +140,53 @@ axios.get('https://api.covid19india.org/data.json')
         dataChart.data.datasets[0].data.reverse();
         dataChart.update();
 
-        // chart toggle button
-        const chartToggleBtn = document.getElementById('chart-toggle');
-        chartToggleBtn.addEventListener('click', (e) => {
-            e.target.innerText === 'Line Chart' ? e.target.innerText = 'Bar Chart' : e.target.innerText = 'Line Chart';
-
+        // line chart button
+        const lineChartBtn = document.getElementById('line-chart');
+        lineChartBtn.addEventListener('click', (e) => {
             // recreating the entire chart as CHART.JS doesn't allow to update chart type after instantializing
             dataChart.destroy();
             dataChart = new Chart(chartEl, {
-                type: e.target.innerText === 'Line Chart' ? 'bar' : 'line',
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Confirmed Cases',
+                        data: [],
+                        backgroundColor: '#331427',
+                        borderWidth: '1',
+                        borderColor: '#ff073a'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    title: {
+                        display: true,
+                        text: 'Infection Rate Graph (last 30 Days)',
+                        fontSize: 18
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            });
+            for (let i = 0; i < 30; i++) {
+                dataChart.data.labels.push(chartDataArray[i].date);
+                dataChart.data.datasets[0].data.push(chartDataArray[i].totalconfirmed);
+            }
+            dataChart.data.labels.reverse();
+            dataChart.data.datasets[0].data.reverse();
+            dataChart.update();
+            console.log(dataChart)
+        });
+
+        // line chart button
+        const barChartBtn = document.getElementById('bar-chart');
+        barChartBtn.addEventListener('click', (e) => {
+            // recreating the entire chart as CHART.JS doesn't allow to update chart type after instantializing
+            dataChart.destroy();
+            dataChart = new Chart(chartEl, {
+                type: 'bar',
                 data: {
                     labels: [],
                     datasets: [{
