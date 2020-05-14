@@ -103,12 +103,11 @@ axios.get('https://api.covid19india.org/data.json')
         console.log(chartDataArray);
 
         // making the chart
-
     }).then(() => {
         let chartEl = document.getElementById('data-chart').getContext('2d');
 
         let dataChart = new Chart(chartEl, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: [],
                 datasets: [{
@@ -180,7 +179,7 @@ axios.get('https://api.covid19india.org/data.json')
             console.log(dataChart)
         });
 
-        // line chart button
+        // bar chart button
         const barChartBtn = document.getElementById('bar-chart');
         barChartBtn.addEventListener('click', (e) => {
             // recreating the entire chart as CHART.JS doesn't allow to update chart type after instantializing
@@ -212,7 +211,7 @@ axios.get('https://api.covid19india.org/data.json')
             });
             for (let i = 0; i < 30; i++) {
                 dataChart.data.labels.push(chartDataArray[i].date);
-                dataChart.data.datasets[0].data.push(chartDataArray[i].totalconfirmed);
+                dataChart.data.datasets[0].data.push(chartDataArray[i].dailyconfirmed);
             }
             dataChart.data.labels.reverse();
             dataChart.data.datasets[0].data.reverse();
