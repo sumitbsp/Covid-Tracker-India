@@ -107,7 +107,7 @@ axios.get('https://api.covid19india.org/data.json')
         let chartEl = document.getElementById('data-chart').getContext('2d');
 
         let dataChart = new Chart(chartEl, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: [],
                 datasets: [{
@@ -133,7 +133,7 @@ axios.get('https://api.covid19india.org/data.json')
         });
         for (let i = 0; i < 30; i++) {
             dataChart.data.labels.push(chartDataArray[i].date);
-            dataChart.data.datasets[0].data.push(chartDataArray[i].totalconfirmed);
+            dataChart.data.datasets[0].data.push(chartDataArray[i].dailyconfirmed);
         }
         dataChart.data.labels.reverse();
         dataChart.data.datasets[0].data.reverse();
