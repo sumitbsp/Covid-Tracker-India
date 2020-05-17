@@ -14,3 +14,4 @@ User can select a state and view detailed information about corana-virus cases i
 * HTML
 * CSS
 * JavaScript
+* ChartsJS (for data visualization)
