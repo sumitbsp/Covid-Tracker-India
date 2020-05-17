@@ -131,7 +131,7 @@ axios.get('https://api.covid19india.org/data.json')
                 }
             }
         });
-        for (let i = 1; i < 31; i++) {
+        for (let i = 0; i < 30; i++) {
             dataChart.data.labels.push(chartDataArray[i].date);
             dataChart.data.datasets[0].data.push(chartDataArray[i].dailyconfirmed);
         }
@@ -169,7 +169,7 @@ axios.get('https://api.covid19india.org/data.json')
                     }
                 }
             });
-            for (let i = 1; i < 31; i++) {
+            for (let i = 0; i < 30; i++) {
                 dataChart.data.labels.push(chartDataArray[i].date);
                 dataChart.data.datasets[0].data.push(chartDataArray[i].totalconfirmed);
             }
@@ -209,7 +209,7 @@ axios.get('https://api.covid19india.org/data.json')
                     }
                 }
             });
-            for (let i = 1; i < 31; i++) {
+            for (let i = 0; i < 30; i++) {
                 dataChart.data.labels.push(chartDataArray[i].date);
                 dataChart.data.datasets[0].data.push(chartDataArray[i].dailyconfirmed);
             }
